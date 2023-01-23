@@ -1,0 +1,8 @@
+2023-01-23 13:48:59,650 :INFO :Pytest.test_loggin :Info log
+2023-01-23 13:48:59,650 :WARNING :Pytest.test_loggin :Warning log
+2023-01-23 13:48:59,650 :ERROR :Pytest.test_loggin :Error log
+2023-01-23 13:48:59,650 :CRITICAL :Pytest.test_loggin :Critical log
+2023-01-23 13:50:23,341: INFO: Pytest.test_loggin: Info log
+2023-01-23 13:50:23,342: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 13:50:23,342: ERROR: Pytest.test_loggin: Error log
+2023-01-23 13:50:23,342: CRITICAL: Pytest.test_loggin: Critical log
