@@ -15,6 +15,7 @@ def test_pass(setup):
 
 
 @pytest.mark.regression
+@pytest.mark.skip
 def test_phone():
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service

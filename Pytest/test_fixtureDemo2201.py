@@ -1,10 +1,14 @@
 import pytest
 
+from Pytest.BaseClass import BaseClass
+
 
 @pytest.mark.usefixtures("setup")
-class TestExample:
+class TestExample(BaseClass):
 
     def test_fixtureDemo(self):
+        ass = self.getLogger()
+        ass.info("Hey, i'm a good info message lol")
         print("I am running steps in fixtureDemo method")
 
     def test_fixtureDemo2(self):

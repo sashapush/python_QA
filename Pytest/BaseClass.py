@@ -1,8 +1,11 @@
+import inspect
 import logging
 
 class BaseClass:
-    def test_logsDemo(self):
-        logger = logging.getLogger(__name__)  # __name__ catches test case name
+    def getLogger(self):
+
+        loggerName = inspect.stack()[1][3]#improvement to properly display test_ methods in logs when using this method as inherited.
+        logger = logging.getLogger(loggerName)  # __name__ catches test case name
 
         fileHandler = logging.FileHandler("logs.txt")  # describe file which is used for logs
         # format of logs

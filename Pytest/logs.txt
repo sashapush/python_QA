@@ -6,3 +6,83 @@
 2023-01-23 13:50:23,342: WARNING: Pytest.test_loggin: Warning log
 2023-01-23 13:50:23,342: ERROR: Pytest.test_loggin: Error log
 2023-01-23 13:50:23,342: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:14:37,166: INFO: Pytest.BaseClass: {'Axel'}
+2023-01-23 14:16:44,244: INFO: Pytest.BaseClass: Name is  Axel
+2023-01-23 14:16:44,244: INFO: Pytest.BaseClass: Surname is Sterling
+2023-01-23 14:16:44,245: INFO: Pytest.BaseClass: Site is Site
+2023-01-23 14:17:15,900: INFO: Pytest.BaseClass: Name is  Axel
+2023-01-23 14:17:15,900: INFO: Pytest.BaseClass: Surname is Sterling
+2023-01-23 14:17:15,900: INFO: Pytest.BaseClass: Site is Site
+2023-01-23 14:17:22,201: INFO: Pytest.BaseClass: Name is  Axel
+2023-01-23 14:17:22,201: INFO: Pytest.BaseClass: Surname is Sterling
+2023-01-23 14:17:22,201: INFO: Pytest.BaseClass: Site is Site
+2023-01-23 14:21:52,525: INFO: Pytest.BaseClass: Name is  Axel
+2023-01-23 14:21:52,525: INFO: Pytest.BaseClass: Surname is Sterling
+2023-01-23 14:21:52,525: INFO: Pytest.BaseClass: Site is Site
+2023-01-23 14:22:07,052: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:22:07,052: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:22:07,052: INFO: test_editProfile: Site is Site
+2023-01-23 14:40:20,315: INFO: test_fixtureDemo: I am info message from another class
+2023-01-23 14:43:03,321: INFO: test_fixtureDemo: I am info message from another class
+2023-01-23 14:43:03,332: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:43:03,332: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:43:03,332: INFO: test_editProfile: Site is Site
+2023-01-23 14:43:03,333: INFO: Pytest.test_loggin: Info log
+2023-01-23 14:43:03,333: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 14:43:03,333: ERROR: Pytest.test_loggin: Error log
+2023-01-23 14:43:03,333: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:45:54,377: INFO: Pytest.test_loggin: Info log
+2023-01-23 14:45:54,377: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 14:45:54,377: ERROR: Pytest.test_loggin: Error log
+2023-01-23 14:45:54,377: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:46:52,515: INFO: Pytest.test_loggin: Info log
+2023-01-23 14:46:52,516: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 14:46:52,516: ERROR: Pytest.test_loggin: Error log
+2023-01-23 14:46:52,516: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:51:19,046: INFO: Pytest.test_loggin: Info log
+2023-01-23 14:51:19,046: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 14:51:19,047: ERROR: Pytest.test_loggin: Error log
+2023-01-23 14:51:19,047: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:54:33,016: INFO: Pytest.test_loggin: Info log
+2023-01-23 14:54:33,016: WARNING: Pytest.test_loggin: Warning log
+2023-01-23 14:54:33,016: ERROR: Pytest.test_loggin: Error log
+2023-01-23 14:54:33,016: CRITICAL: Pytest.test_loggin: Critical log
+2023-01-23 14:58:23,601: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:58:23,601: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:58:23,601: INFO: test_editProfile: Site is Site
+2023-01-23 14:58:23,602: INFO: Pytest.test_loggin2301: Info log
+2023-01-23 14:58:23,602: WARNING: Pytest.test_loggin2301: Warning log
+2023-01-23 14:58:23,602: ERROR: Pytest.test_loggin2301: Error log
+2023-01-23 14:58:23,602: CRITICAL: Pytest.test_loggin2301: Critical log
+2023-01-23 14:58:41,368: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:58:41,368: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:58:41,368: INFO: test_editProfile: Site is Site
+2023-01-23 14:58:49,194: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:58:49,195: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:58:49,195: INFO: test_editProfile: Site is Site
+2023-01-23 14:58:49,195: INFO: Pytest.test_loggin2301: Info log
+2023-01-23 14:58:49,195: WARNING: Pytest.test_loggin2301: Warning log
+2023-01-23 14:58:49,196: ERROR: Pytest.test_loggin2301: Error log
+2023-01-23 14:58:49,196: CRITICAL: Pytest.test_loggin2301: Critical log
+2023-01-23 14:58:59,219: INFO: test_editProfile: Name is  Axel
+2023-01-23 14:58:59,220: INFO: test_editProfile: Surname is Sterling
+2023-01-23 14:58:59,220: INFO: test_editProfile: Site is Site
+2023-01-23 14:58:59,222: INFO: Pytest.test_loggin2301: Info log
+2023-01-23 14:58:59,222: WARNING: Pytest.test_loggin2301: Warning log
+2023-01-23 14:58:59,222: ERROR: Pytest.test_loggin2301: Error log
+2023-01-23 14:58:59,222: CRITICAL: Pytest.test_loggin2301: Critical log
+2023-01-23 15:01:46,463: INFO: test_editProfile: Name is  Axel
+2023-01-23 15:01:46,463: INFO: test_editProfile: Surname is Sterling
+2023-01-23 15:01:46,463: INFO: test_editProfile: Site is Site
+2023-01-23 15:01:46,464: INFO: Pytest.test_loggin2301: Info log
+2023-01-23 15:01:46,464: WARNING: Pytest.test_loggin2301: Warning log
+2023-01-23 15:01:46,464: ERROR: Pytest.test_loggin2301: Error log
+2023-01-23 15:01:46,464: CRITICAL: Pytest.test_loggin2301: Critical log
+2023-01-23 15:04:01,298: INFO: test_fixtureDemo: Hey, i'm a good info message lol
+2023-01-23 15:04:01,306: INFO: test_editProfile: Name is  Axel
+2023-01-23 15:04:01,306: INFO: test_editProfile: Surname is Sterling
+2023-01-23 15:04:01,306: INFO: test_editProfile: Site is Site
+2023-01-23 15:04:01,307: INFO: Pytest.test_loggin2301: Info log
+2023-01-23 15:04:01,307: WARNING: Pytest.test_loggin2301: Warning log
+2023-01-23 15:04:01,307: ERROR: Pytest.test_loggin2301: Error log
+2023-01-23 15:04:01,307: CRITICAL: Pytest.test_loggin2301: Critical log
