@@ -1,17 +1,18 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
-
+#we need to move browser invocation to the commonly used place, f.e. fixture
+#fixture will initialise driver object and load the URL
+#to use the fixture across class TestOne - use the string below
+@pytest.mark.usefixtures("setup")
 class TestOne:
     def test_e2e_buy_phone(self):
 
-        service_object = Service("c:\\Users\\Alex\\PycharmProjects\\autopython_scrape\\chromedriver.exe")
-        driver = webdriver.Chrome(service=service_object)
-        driver.implicitly_wait(2)
-        driver.get("https://rahulshettyacademy.com/angularpractice/")
+
         # 1 click shop
         driver.find_element(By.CSS_SELECTOR, ".nav-link[href='/angularpractice/shop']").click()
         # alternative css locator = a[href*='shop'] a is tag, href* searches for value with wildcart
