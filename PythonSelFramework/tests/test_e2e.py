@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from Pytest.BaseClass import BaseClass
+from PythonSelFramework.pageObjects.homePage import HomePage
 
 
 #we need to move browser invocation to the commonly used place, f.e. fixture
@@ -15,10 +16,11 @@ from Pytest.BaseClass import BaseClass
 class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
     def test_e2e_buy_phone(self, setup):
         # 1 click shop
-        self.driver.find_element(By.CSS_SELECTOR, ".nav-link[href='/angularpractice/shop']").click() #via self we pass the driver from fixture to object instance(test case)
-        # alternative css locator = a[href*='shop'] a is tag, href* searches for value with wildcart
+        homePage = HomePage(self.driver)
+        homePage.shopItems().click()
+
         # 2 pass the product name to the script, f.e. click Blackberry phone from the list
-        phones_list = self.driver.find_elements(By.CSS_SELECTOR,
+        phones_list = self.driver.find_elements(By.CSS_SELECTOR, #via self we pass the driver from fixture to object instance(test case)
                                            ".card.h-100")  # alt css ".card-body" ".col-lg-3.col-md-6.mb-3" xpath //div[@class="card h-100"]
         for phone in phones_list:
             if phone.find_element(By.CSS_SELECTOR, ".card-title").text == "Blackberry":
