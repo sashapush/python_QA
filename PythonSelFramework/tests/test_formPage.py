@@ -1,5 +1,6 @@
 import pytest
 
+from PythonSelFramework.TestData.HomePageData import HomePageData
 from PythonSelFramework.pageObjects.homePage import HomePage
 from PythonSelFramework.util.BaseClass import baseClass
 
@@ -26,9 +27,6 @@ class TestFormPage(baseClass):
         self.driver.refresh()  # to refresh the browser in order to properly use test data. Alternatively - we can remove going to url from fixture of "setup" and add it as first step of this tc
 
     @pytest.fixture(
-        params=[{"Name": "John Cena", "Email": "TestVasyan@gmail.com", "Password": "Ololololo", "Gender": "Male"},
-                {"Name": "Firefox", "Email": "2@gmail.com", "Password": "KEK", "Gender": "Female"},
-                {"Name": "Rey Mysterio", "Email": "wwwe@wwe.com", "Password": "OLN",
-                 "Gender": "Male"}])  # more complex parametrized example
+        params=HomePageData.test_formPage_userData)
     def userData(self, request):  # request is the param called from the list above
         return request.param
