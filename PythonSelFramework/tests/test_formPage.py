@@ -8,14 +8,14 @@ class TestFormPage(baseClass):
     def test_formSubmission(self, userData):
         homePage = HomePage(self.driver)
         # self.driver.get("https://rahulshettyacademy.com/angularpractice/" see 26 string for explanation. IF we want to use it - we need to remove this from "setup" fixture
-        homePage.getName().send_keys(userData[0])
-        homePage.getEmail().send_keys(userData[1])
-        homePage.getPassword().send_keys(userData[2])
+        homePage.getName().send_keys(userData["Name"])
+        homePage.getEmail().send_keys(userData["Email"])
+        homePage.getPassword().send_keys(userData["Password"])
         homePage.getCheckbox().click()
         homePage.getRadioButton().click()
-        self.selectOptionByText(homePage.getGender(), userData[3])
+        self.selectOptionByText(homePage.getGender(), userData["Gender"])
         # or by index (text should be better)
-        self.selectOptionByIndex(homePage.getGender(), 1)
+        # self.selectOptionByIndex(homePage.getGender(), 1)
         homePage.getSubmitButton().click()
         homePage.getTwoWay().send_keys("Hello lol")
         homePage.getTwoWay().clear()
@@ -26,7 +26,9 @@ class TestFormPage(baseClass):
         self.driver.refresh()  # to refresh the browser in order to properly use test data. Alternatively - we can remove going to url from fixture of "setup" and add it as first step of this tc
 
     @pytest.fixture(
-        params=[("John Cena", "TestVasyan@gmail.com", "Ololololo", "Male"), ("Firefox", "2@gmail.com", "KEK", "Female"),
-                ("Rey Mysterio", "wwwe@wwe.com", "OLN", "Male")])  # more complex parametrized example
+        params=[{"Name": "John Cena", "Email": "TestVasyan@gmail.com", "Password": "Ololololo", "Gender": "Male"},
+                {"Name": "Firefox", "Email": "2@gmail.com", "Password": "KEK", "Gender": "Female"},
+                {"Name": "Rey Mysterio", "Email": "wwwe@wwe.com", "Password": "OLN",
+                 "Gender": "Male"}])  # more complex parametrized example
     def userData(self, request):  # request is the param called from the list above
         return request.param
