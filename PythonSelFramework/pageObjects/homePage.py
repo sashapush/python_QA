@@ -38,11 +38,13 @@ class HomePage:
         return self.driver.find_element(*HomePage.checkbox)
     def getRadioButton(self):
         return self.driver.find_element(*HomePage.radio_button)
-    def getDropdown(self):
+
+    def getGender(self):
         return self.driver.find_element(*HomePage.dropdown)
+
     def getSubmitButton(self):
         return self.driver.find_element(*HomePage.submit_button)
     def getTwoWay(self):
         return self.driver.find_element(*HomePage.two_way_data)
     def getAlert(self):
-        return self.driver.find_element(*HomePage.alert).text
+        return self.driver.find_element(*HomePage.alert)

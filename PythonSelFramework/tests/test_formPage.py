@@ -1,8 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-
 from PythonSelFramework.pageObjects.homePage import HomePage
 from PythonSelFramework.util.BaseClass import baseClass
 
@@ -15,13 +10,13 @@ class TestFormPage(baseClass):
         homePage.getPassword().send_keys("Ololololo")
         homePage.getCheckbox().click()
         homePage.getRadioButton().click()
-        dropdown = Select(homePage.getDropdown())
-        dropdown.select_by_index(1)  # selects second option
-        dropdown.select_by_visible_text("Male")  # selects option based on visible text
+        self.selectOptionByText(homePage.getGender(), "Male")
+        # or by index (text should be better)
+        self.selectOptionByIndex(homePage.getGender(), 1)
         homePage.getSubmitButton().click()
         homePage.getTwoWay().send_keys("Hello lol")
         homePage.getTwoWay().clear()
-        message = homePage.getAlert()
+        message = homePage.getAlert().text
         self.save_screenshot("localtors_refactored.png")
         assert "Success" in message
-
+        print("Assert successfull")
