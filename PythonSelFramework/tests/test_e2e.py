@@ -5,7 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from Pytest.BaseClass import BaseClass
+from PythonSelFramework.pageObjects.deliveryDetails import DeliveryDetails
 from PythonSelFramework.pageObjects.homePage import HomePage
+from PythonSelFramework.pageObjects.shop import Shop
 
 
 #we need to move browser invocation to the commonly used place, f.e. fixture
@@ -18,31 +20,29 @@ class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
         # 1 click shop
         homePage = HomePage(self.driver)
         homePage.shopItems().click()
-
+        shop_page = Shop(self.driver)
         # 2 pass the product name to the script, f.e. click Blackberry phone from the list
-        phones_list = self.driver.find_elements(By.CSS_SELECTOR, #via self we pass the driver from fixture to object instance(test case)
-                                           ".card.h-100")  # alt css ".card-body" ".col-lg-3.col-md-6.mb-3" xpath //div[@class="card h-100"]
+        phones_list = shop_page.getPhonesList()
         for phone in phones_list:
-            if phone.find_element(By.CSS_SELECTOR, ".card-title").text == "Blackberry":
+            phone_name = shop_page.getPhoneName(phone)
+            if phone_name == "Blackberry":
+                shop_page.getCartButton(phone).click()
                 # 3 add the product to cart
-                phone.find_element(By.CSS_SELECTOR, ".btn.btn-info").click()
         # 4 checkout - checkout
-        self.driver.find_element(By.CSS_SELECTOR,
-                            ".nav-link.btn.btn-primary").click()  # or use xpath //a[contains(text(),'Checkout')]
-        self.driver.find_element(By.XPATH,
-                            "//button[contains(text(),'Checkout')]").click()  # or use xpath //a[contains(text(),'Checkout')]#
+        shop_page.getCheckoutButton().click()
+        shop_page.confirmCheckout().click()
         # 5 select country name and wait via explicit wait
-        self.driver.find_element(By.ID, "country").send_keys("Bel")
+        deliveryPage = DeliveryDetails(self.driver)
+        deliveryPage.getCountry().send_keys("Bel")
         wait = WebDriverWait(self.driver, 10)
         wait.until(ec.presence_of_element_located((By.LINK_TEXT, "Belarus")))
-        self.driver.find_element(By.LINK_TEXT, "Belarus").click()
+        deliveryPage.getSearchSuggestion().click()
         # 6 accept checkbox
-        self.driver.find_element(By.CSS_SELECTOR, ".checkbox.checkbox-primary").click()
-        self.driver.find_element(By.XPATH, "//input[@value='Purchase']").click()
-        ass = self.driver.find_element(By.CSS_SELECTOR,
-                                  ".alert.alert-success.alert-dismissible").text  # one class can be used as well
+        deliveryPage.getConditionsCheckbox().click()
+        deliveryPage.getPurchaseButton().click()
+        ass = deliveryPage.getNotification().text
         print(ass)
         # 7 assert success message
         assert "Success! Thank you!" in ass
         assert "Success! Thank you! Your order will be delivered in next few weeks :-)." in ass
-        self.driver.save_screenshot("buyPhones2001.png")
+        self.driver.save_screenshot("buyPhones2401.png")
