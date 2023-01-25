@@ -5,7 +5,16 @@ from PythonSelFramework.pageObjects.shop import Shop
 
 class HomePage:
     shop_link = (By.CSS_SELECTOR, ".nav-link[href='/angularpractice/shop']")
-
+    name_field = (By.XPATH, "//input[@name='name']")
+    # driver.find_element(By.CSS_SELECTOR, "input[name='name']") #takes first element, but there are 2
+    email_field = (By.NAME, "email")
+    password_field = (By.ID, "exampleInputPassword1")
+    checkbox = (By.ID, "exampleCheck1")
+    radio_button = (By.CSS_SELECTOR, "#inlineRadio1")
+    dropdown = (By.ID, "exampleFormControlSelect1")
+    submit_button = (By.XPATH, "//input[@type='submit']")
+    two_way_data = (By.XPATH, "(//input[@type='text'])[3]")
+    alert = (By.CLASS_NAME, "alert-success")
     def __init__(self, driver):
         self.driver = driver
 
@@ -18,3 +27,22 @@ class HomePage:
          # above equals to  self.driver.find_element(By.CSS_SELECTOR, ".nav-link[href='/angularpractice/shop']") from test_e2e.py
         #driver should come from actual test case - that's why we create constructor
 
+    def getName(self):
+        return self.driver.find_element(*HomePage.name_field)
+    def getEmail(self):
+        return self.driver.find_element(*HomePage.email_field)
+
+    def getPassword(self):
+        return self.driver.find_element(*HomePage.password_field)
+    def getCheckbox(self):
+        return self.driver.find_element(*HomePage.checkbox)
+    def getRadioButton(self):
+        return self.driver.find_element(*HomePage.radio_button)
+    def getDropdown(self):
+        return self.driver.find_element(*HomePage.dropdown)
+    def getSubmitButton(self):
+        return self.driver.find_element(*HomePage.submit_button)
+    def getTwoWay(self):
+        return self.driver.find_element(*HomePage.two_way_data)
+    def getAlert(self):
+        return self.driver.find_element(*HomePage.alert).text

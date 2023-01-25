@@ -10,3 +10,6 @@ class baseClass:
         wait = WebDriverWait(self.driver, 10)
         wait.until(ec.presence_of_element_located((By.LINK_TEXT, text)))
         #wait.until(ec.presence_of_element_located((By.LINK_TEXT, "Belarus")))
+
+    def save_screenshot(self, name):
+        self.driver.save_screenshot(name)
