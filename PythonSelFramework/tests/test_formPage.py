@@ -1,16 +1,19 @@
+import pytest
+
 from PythonSelFramework.pageObjects.homePage import HomePage
 from PythonSelFramework.util.BaseClass import baseClass
 
 
 class TestFormPage(baseClass):
-    def test_formSubmission(self):
+    def test_formSubmission(self, userData):
         homePage = HomePage(self.driver)
-        homePage.getName().send_keys("John Cena")
-        homePage.getEmail().send_keys("TestVasyan@gmail.com")
-        homePage.getPassword().send_keys("Ololololo")
+        # self.driver.get("https://rahulshettyacademy.com/angularpractice/" see 26 string for explanation. IF we want to use it - we need to remove this from "setup" fixture
+        homePage.getName().send_keys(userData[0])
+        homePage.getEmail().send_keys(userData[1])
+        homePage.getPassword().send_keys(userData[2])
         homePage.getCheckbox().click()
         homePage.getRadioButton().click()
-        self.selectOptionByText(homePage.getGender(), "Male")
+        self.selectOptionByText(homePage.getGender(), userData[3])
         # or by index (text should be better)
         self.selectOptionByIndex(homePage.getGender(), 1)
         homePage.getSubmitButton().click()
@@ -20,3 +23,10 @@ class TestFormPage(baseClass):
         self.save_screenshot("localtors_refactored.png")
         assert "Success" in message
         print("Assert successfull")
+        self.driver.refresh()  # to refresh the browser in order to properly use test data. Alternatively - we can remove going to url from fixture of "setup" and add it as first step of this tc
+
+    @pytest.fixture(
+        params=[("John Cena", "TestVasyan@gmail.com", "Ololololo", "Male"), ("Firefox", "2@gmail.com", "KEK", "Female"),
+                ("Rey Mysterio", "wwwe@wwe.com", "OLN", "Male")])  # more complex parametrized example
+    def userData(self, request):  # request is the param called from the list above
+        return request.param
