@@ -19,20 +19,19 @@ class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
     def test_e2e_buy_phone(self, setup):
         # 1 click shop
         homePage = HomePage(self.driver)
-        homePage.shopItems().click()
-        shop_page = Shop(self.driver)
+        shopPage = homePage.shopItems()  #since we are returninh shop_page object in homePage.shopItems() method
         # 2 pass the product name to the script, f.e. click Blackberry phone from the list
-        phones_list = shop_page.getPhonesList()
+        #we replaced object with shop_page above
+        phones_list = shopPage.getPhonesList()
         for phone in phones_list:
-            phone_name = shop_page.getPhoneName(phone)
+            phone_name = shopPage.getPhoneName(phone)
             if phone_name == "Blackberry":
-                shop_page.getCartButton(phone).click()
+                shopPage.getCartButton(phone).click()
                 # 3 add the product to cart
         # 4 checkout - checkout
-        shop_page.getCheckoutButton().click()
-        shop_page.confirmCheckout().click()
+        shopPage.getCheckoutButton().click()
+        deliveryPage = shopPage.confirmCheckout()
         # 5 select country name and wait via explicit wait
-        deliveryPage = DeliveryDetails(self.driver)
         deliveryPage.getCountry().send_keys("Bel")
         wait = WebDriverWait(self.driver, 10)
         wait.until(ec.presence_of_element_located((By.LINK_TEXT, "Belarus")))

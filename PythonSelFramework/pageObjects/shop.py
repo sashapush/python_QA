@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from PythonSelFramework.pageObjects.deliveryDetails import DeliveryDetails
+
 
 class Shop:
     phones_list = (By.CSS_SELECTOR, ".card.h-100")
@@ -23,5 +25,8 @@ class Shop:
         return self.driver.find_element(*Shop.checkout_button)
 
     def confirmCheckout(self):
-        return self.driver.find_element(*Shop.confirm_checkout_button)
+        self.driver.find_element(*Shop.confirm_checkout_button).click()
+        deliveryDetails = DeliveryDetails(self.driver)
+        return deliveryDetails
+
 
