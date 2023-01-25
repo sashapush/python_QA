@@ -33,11 +33,12 @@ class baseClass:
             3]  # improvement to properly display test_ methods in logs when using this method as inherited.
         logger = logging.getLogger(loggerName)  # __name__ catches test case name
 
-        fileHandler = logging.FileHandler("logs.txt")  # describe file which is used for logs
+        fileHandler = logging.FileHandler(
+            "C:\\Users\\Alex\\PycharmProjects\\pythonAQAdraft\\PythonSelFramework\\util\\logs.txt")  # describe file which is used for logs
+        # fileHandler = logging.FileHandler('logfile.log', mode='w') if we want to clear logs for each run
         # format of logs
         format = logging.Formatter(
             "%(asctime)s: %(levelname)s: %(name)s: %(message)s")  # example of tutor ;s is treating like a string
-
         fileHandler.setFormatter(format)  # adding format to file object
         if logger.hasHandlers():
             logger.handlers.clear()

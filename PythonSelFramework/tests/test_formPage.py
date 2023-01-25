@@ -12,7 +12,7 @@ class TestFormPage(baseClass):
         homePage = HomePage(self.driver)
         # self.driver.get("https://rahulshettyacademy.com/angularpractice/" see 26 string for explanation. IF we want to use it - we need to remove this from "setup" fixture
         log.info("Typing in first name as:")
-        log.info(userData["Name"])
+        # log.info(userData["Name"]) error
         homePage.getName().send_keys(userData["Name"])
         homePage.getEmail().send_keys(userData["Email"])
         homePage.getPassword().send_keys(userData["Password"])
@@ -20,13 +20,10 @@ class TestFormPage(baseClass):
         homePage.getCheckbox().click()
         homePage.getRadioButton().click()
         self.selectOptionByText(homePage.getGender(), userData["Gender"])
-        # or by index (text should be better)
-        # self.selectOptionByIndex(homePage.getGender(), 1)
         homePage.getSubmitButton().click()
         homePage.getTwoWay().send_keys("Hello lol")
         homePage.getTwoWay().clear()
         message = homePage.getAlert().text
-        self.save_screenshot("localtors_refactored.png")
         assert "Success" in message
         print("Assert successfull")
         self.driver.refresh()

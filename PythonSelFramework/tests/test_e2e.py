@@ -14,7 +14,7 @@ class TestOne(baseClass): #inherit BaseClass to use its' fixtures
         phones_list = shopPage.getPhonesList()
         for phone in phones_list:
             phone_name = shopPage.getPhoneName(phone)
-            log.info(phone_name)
+            log.info("Phone name is:" + phone_name)
             if phone_name == "Blackberry":
                 shopPage.getCartButton(phone).click()
                 # 3 add the product to cart
@@ -31,8 +31,7 @@ class TestOne(baseClass): #inherit BaseClass to use its' fixtures
         deliveryPage.getConditionsCheckbox().click()
         deliveryPage.getPurchaseButton().click()
         ass = deliveryPage.getNotification().text
-        log.info("Text parsed is: " + ass)
+        # log.info("Text parsed"+ass) #TODO investigate why ass can't be logged.
         # 7 assert success message
-        assert "Success! Thank you!" in ass
-        assert "Success! Thank you! Your order will be delivered in next few weeks :-)." in ass
+        assert (ass in "Succes1s! Thank you!")
         self.driver.save_screenshot("buyPhones2501.png")
