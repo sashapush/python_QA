@@ -1,13 +1,3 @@
-import time
-
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-
-# from selenium.webdriver.firefox.service import Service
-
-# demo of webdriver, chrome. We need to call driver with .exe file
 # Chrome
 service_object = Service("c:\\Users\\Alex\\PycharmProjects\\autopython_scrape\\chromedriver.exe")
 driver = webdriver.Chrome(service=service_object)  # expected Service object from params.
