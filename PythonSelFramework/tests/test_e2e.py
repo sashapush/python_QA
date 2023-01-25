@@ -1,13 +1,6 @@
-import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.support.wait import WebDriverWait
-from Pytest.BaseClass import BaseClass
-from PythonSelFramework.pageObjects.deliveryDetails import DeliveryDetails
+from PythonSelFramework.util.BaseClass import baseClass #refactored to use proper package
 from PythonSelFramework.pageObjects.homePage import HomePage
-from PythonSelFramework.pageObjects.shop import Shop
+
 
 
 #we need to move browser invocation to the commonly used place, f.e. fixture
@@ -15,7 +8,7 @@ from PythonSelFramework.pageObjects.shop import Shop
 #we need to tie fixture instance to class instance
 
 #fixture usage should be removed from class and be a part of parent class
-class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
+class TestOne(baseClass): #inherit BaseClass to use its' fixtures
     def test_e2e_buy_phone(self, setup):
         # 1 click shop
         homePage = HomePage(self.driver)
@@ -33,8 +26,8 @@ class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
         deliveryPage = shopPage.confirmCheckout()
         # 5 select country name and wait via explicit wait
         deliveryPage.getCountry().send_keys("Bel")
-        wait = WebDriverWait(self.driver, 10)
-        wait.until(ec.presence_of_element_located((By.LINK_TEXT, "Belarus")))
+        #self.getLogger() to update with proper base class
+        self.verifyLinkPresence("Belarus")
         deliveryPage.getSearchSuggestion().click()
         # 6 accept checkbox
         deliveryPage.getConditionsCheckbox().click()
@@ -44,4 +37,4 @@ class TestOne(BaseClass): #inherit BaseClass to use its' fixtures
         # 7 assert success message
         assert "Success! Thank you!" in ass
         assert "Success! Thank you! Your order will be delivered in next few weeks :-)." in ass
-        self.driver.save_screenshot("buyPhones2401.png")
+        self.driver.save_screenshot("buyPhones2501.png")

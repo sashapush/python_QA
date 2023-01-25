@@ -54,7 +54,7 @@ driver.find_element(By.XPATH, value="(//input[@type='text'])[3]").send_keys(
 driver.find_element(By.XPATH, value="(//input[@type='text'])[3]").clear()  # to empty the field
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 
-driver.save_screenshot("example.png")
+driver.save_screenshot("localtors.png")
 # driver.close() #to close driver
 # time.sleep(10)
 assert "Success" in message
