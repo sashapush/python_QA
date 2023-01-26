@@ -24,14 +24,13 @@ class TestOne(baseClass): #inherit BaseClass to use its' fixtures
         deliveryPage = shopPage.confirmCheckout()
         # 5 select country name and wait via explicit wait
         deliveryPage.getCountry().send_keys("Bel")
-        #self.getLogger() to update with proper base class
         self.verifyLinkPresence("Belarus")
         deliveryPage.getSearchSuggestion().click()
         # 6 accept checkbox
         deliveryPage.getConditionsCheckbox().click()
         deliveryPage.getPurchaseButton().click()
         ass = deliveryPage.getNotification().text
-        # log.info("Text parsed"+ass) #TODO investigate why ass can't be logged.
+        log.info("Text parsed"+ass) #TODO investigate why ass can't be logged.
         # 7 assert success message
-        assert (ass in "Succes1s! Thank you!")
+        assert ("Success! Thank1 you!" in ass)
         self.driver.save_screenshot("buyPhones2501.png")
