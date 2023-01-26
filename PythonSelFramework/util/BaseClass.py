@@ -34,7 +34,7 @@ class baseClass:
         logger = logging.getLogger(loggerName)  # __name__ catches test case name
 
         fileHandler = logging.FileHandler(
-            "C:\\Users\\Alex\\PycharmProjects\\pythonAQAdraft\\PythonSelFramework\\util\\logs.txt")  # describe file which is used for logs
+            "C:\\Users\\lera\\PycharmProjects\\python_QA\\PythonSelFramework\\util\\logs.txt")  # describe file which is used for logs
         # fileHandler = logging.FileHandler('logfile.log', mode='w') if we want to clear logs for each run
         # format of logs
         format = logging.Formatter(
