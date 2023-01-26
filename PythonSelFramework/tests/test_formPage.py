@@ -25,7 +25,7 @@ class TestFormPage(baseClass):
         homePage.getTwoWay().clear()
         message = homePage.getAlert().text
         assert "Success" in message
-        print("Assert successfull")
+        print("Assert successful")
         self.driver.refresh()
         # to refresh the browser in order to properly use test data. Alternatively - we can remove going to url from fixture of "setup" and add it as first step of this tc
 
