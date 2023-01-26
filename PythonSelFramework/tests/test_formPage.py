@@ -29,7 +29,9 @@ class TestFormPage(baseClass):
         self.driver.refresh()
         # to refresh the browser in order to properly use test data. Alternatively - we can remove going to url from fixture of "setup" and add it as first step of this tc
 
+    # @pytest.fixture(
+    #    params=HomePageData.test_formPage_userData)
     @pytest.fixture(
-        params=HomePageData.test_formPage_userData)
+        params=HomePageData.getTestData("TestCase2"))
     def userData(self, request):  # request is the param called from the list above
         return request.param
