@@ -20,3 +20,11 @@ with open(
     # print(file) #file content
     print(file["result"]["chart"][1]["score"])
     print(file["result"])
+    # get the result for the exact date key "2021-12-18", not index. Value is 76
+    print(type(file["result"]["chart"]))  # list
+    # to get this result we iterate through the file
+    for item in file["result"]["chart"]:
+        if item["dt"] == "2021-12-18":
+            print(item["score"])
+            assert item["score"] == 76.0
+    # print(file["result"]["chart"])
