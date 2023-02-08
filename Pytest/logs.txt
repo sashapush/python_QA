@@ -86,3 +86,7 @@
 2023-01-23 15:04:01,307: WARNING: Pytest.test_loggin2301: Warning log
 2023-01-23 15:04:01,307: ERROR: Pytest.test_loggin2301: Error log
 2023-01-23 15:04:01,307: CRITICAL: Pytest.test_loggin2301: Critical log
+2023-02-01 15:40:17,825: INFO: test_editProfile: Name is  Axel
+2023-02-01 15:40:17,825: INFO: test_editProfile: Surname is Sterling
+2023-02-01 15:40:17,825: INFO: test_editProfile: Site is Site
+2023-02-01 15:40:43,478: INFO: test_fixtureDemo: Hey, i'm a good info message lol
