@@ -1,10 +1,14 @@
 import requests
 from api.BackEndAutomation.payloads import *  # import * imports all methods instead of specific one
 from api.BackEndAutomation.utils.configs import getConfig
+from api.BackEndAutomation.utils.resources import apiResources
 
-post_response = requests.post(getConfig()['API']['endpoint'] + "/Library/Addbook.php",
+url = getConfig()['API']['endpoint'] + apiResources.addBook
+headers = {"Content-Type": "application/json"}
+
+post_response = requests.post(url,
                               json=addBookPayload("stabletest2"),
-                              headers={"Content-Type": "application/json"})
+                              headers=headers)
 print(post_response.status_code)
 # print(response.content) #bytes
 assert post_response.status_code == 200
@@ -17,8 +21,9 @@ bookId = r["ID"]
 # print(bookId)
 
 #
-delete_response = requests.post("http://216.10.245.166/Library/DeleteBook.php", json={
-    "ID": bookId}, headers={"Content-Type": "application/json"})
+delete_url = getConfig()['API']['endpoint'] + apiResources.deleteBook
+delete_response = requests.post(delete_url, json={
+    "ID": bookId}, headers=headers)
 print(delete_response.status_code)
 print(delete_response.text)
 d = delete_response.json()
