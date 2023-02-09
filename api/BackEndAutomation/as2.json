@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "result": {
+    "chart": [
+      {
+        "dt": "2021-12-15",
+        "score": 76.0
+      },
+      {
+        "dt": "2021-12-16",
+        "score": 79.0
+      },
+      {
+        "dt": "2021-12-17",
+        "score": 75.0
+      },
+      {
+        "dt": "2021-12-18",
+        "score": 76.0
+      },
+      {
+        "dt": "2021-12-19",
+        "score": 76.0
+      },
+      {
+        "dt": "2021-12-20",
+        "score": 76.0
+      },
+      {
+        "dt": "2021-12-21",
+        "score": 76.0
+      }
+    ],
+    "score": 74.16666666666667,
+    "score_update": 2.844086021505376,
+    "star_rating": 4.3,
+    "star_rating_upd": 0.0,
+    "new_reviews": {
+      "value": 13,
+      "api_filter": {}
+    },
+    "new_reviews_upd": 7,
+    "new_reviews_products": 5,
+    "new_neg_reviews": {
+      "value": 6,
+      "api_filter": {
+        "rnr_rating": [
+          "st1",
+          "st2"
+        ]
+      }
+    },
+    "new_neg_reviews_upd": 4,
+    "new_neg_reviews_products": {
+      "value": 4,
+      "api_filter": {
+        "rnr_rating": [
+          "st1",
+          "st2"
+        ]
+      }
+    },
+    "no_reviews_yet": {
+      "value": 0,
+      "api_filter": {
+        "rnr_reviews": [
+          "no_reviews"
+        ]
+      }
+    }
+  },
+  "timestamp": null,
+  "api_time": 0.2568628787994385,
+  "log_id": 390857439,
+  "from_cache": false,
+  "meta": null
+}
