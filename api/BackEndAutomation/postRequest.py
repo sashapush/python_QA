@@ -1,8 +1,9 @@
 import requests
-
 from api.BackEndAutomation.payloads import *  # import * imports all methods instead of specific one
+from api.BackEndAutomation.utils.configs import getConfig
 
-post_response = requests.post("http://216.10.245.166/Library/Addbook.php", json=addBookPayload("stabletest2"),
+post_response = requests.post(getConfig()['API']['endpoint'] + "/Library/Addbook.php",
+                              json=addBookPayload("stabletest2"),
                               headers={"Content-Type": "application/json"})
 print(post_response.status_code)
 # print(response.content) #bytes
