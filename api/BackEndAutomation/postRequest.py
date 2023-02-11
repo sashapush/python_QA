@@ -44,10 +44,10 @@ git_response = session.get(gurl)  # attribute verify=False will skip ssl sertifi
 print("Git got status code: ", git_response.status_code)
 
 # TODO more testing with httpbin.org
-# url = 'https://httpbin.org/post'
-# files = {'file': open('Library-API.docx', 'rb')}
-# r = requests.post(url, files=files)
-# print(r.text)
+url = 'https://httpbin.org/post'
+files = {'file': open('Library-API.docx', 'rb')}
+r = requests.post(url, files=files)
+print(r.text)
 
 # https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repositories-for-the-authenticated-user
 gurl2 = gurl + "/repos"
