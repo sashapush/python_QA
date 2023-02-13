@@ -15,4 +15,14 @@ sum = 0
 for item in table:
     sum += item[2]
 print(sum)
+query = "update customerInfo set Location = %s where CourseName = %s;"
+data = ("US", "Jmeter")
+# or f"update customerInfo set Location = {location} where CourseName = {name};"
+cursor.execute(query, data)
+conn.commit()  # commits current transaction, used with update
+print("Update successful")
+cursor.execute(f"delete from customerInfo where courseName = 'WebServices';")
+conn.commit()
+print("Delete successful")
+
 conn.close()  # close connection to database server
