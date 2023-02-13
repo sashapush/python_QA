@@ -15,3 +15,4 @@ sum = 0
 for item in table:
     sum += item[2]
 print(sum)
+conn.close()  # close connection to database server
