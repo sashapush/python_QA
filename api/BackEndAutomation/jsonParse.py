@@ -14,7 +14,7 @@ json_file = '{"name": "Axel","languages":["Java","Python"]}'
 
 # parse json file**
 with open(
-        "C:\\Users\\Alex\\PycharmProjects\\pythonAQAdraft\\api\\BackEndAutomation\\ass.json") as f:  # without param it opens in read mode
+        "/api/BackEndAutomation/ass.json") as f:  # without param it opens in read mode
     file = json.load(f)  # we create a new dictionary from file
     print(type(file))  # dictionary
     # print(file) #file content
@@ -29,7 +29,7 @@ with open(
             assert item["score"] == 76.0
     # print(file["result"]["chart"])
 # compare 2 json files - open both files and store to dictionareis
-with open("C:\\Users\\Alex\\PycharmProjects\\pythonAQAdraft\\api\\BackEndAutomation\\as2.json") as fi:
+with open("/api/BackEndAutomation/as2.json") as fi:
     file2 = json.load(fi)
     print(file, "\n", file2)
     print(file == file2)  # this is how we compare files, returns False

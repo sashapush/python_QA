@@ -3,7 +3,6 @@ from api.BackEndAutomation.payloads import *  # import * imports all methods ins
 from api.BackEndAutomation.utils import configs
 from api.BackEndAutomation.utils.configs import getConfig
 from api.BackEndAutomation.utils.resources import apiResources
-import os
 
 url = getConfig()['API']['endpoint'] + apiResources.addBook
 headers = {"Content-Type": "application/json"}
@@ -50,7 +49,7 @@ session = requests.session()  # creates a session stream
 session.auth = auth = ("sashapush@tut.by", configs.getPassword())
 gurl = 'https://api.github.com/user'
 git_response = session.get(gurl)  # attribute verify=False will skip ssl sertificate /or use getPassword() instead opf
-print("\n Git got status code: ", git_response.status_code)
+print("\nGit got status code: ", git_response.status_code)
 
 # TODO more testing with httpbin.org
 url = 'https://httpbin.org/post'

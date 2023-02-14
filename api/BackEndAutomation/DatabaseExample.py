@@ -1,9 +1,7 @@
-import mysql.connector
-
-from api.BackEndAutomation.utils.configs import *
-
 # host, database/schema name, user, password #### PythonAutomation/ apidevelop
 # conn = mysql.connector.connect(host="localhost", database="apidevelop", user="root", password="root")
+from api.BackEndAutomation.utils.configs import getDbConnection
+
 conn = getDbConnection()  # optimised version
 print(conn.is_connected())  # checking if connection is successfully established
 

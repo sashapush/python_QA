@@ -1,4 +1,4 @@
-from api.BackEndAutomation.utils.configs import *
+from api.BackEndAutomation.utils.configs import getQuery
 
 
 def addBookPayload(isbn):
