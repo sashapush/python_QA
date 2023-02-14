@@ -25,10 +25,11 @@ bookId = r["ID"]
 # Get book by author endpoint
 author = "Sasha pushka"
 get_url = getConfig()['API']['endpoint'] + apiResources.getBookByAuthorName + author
-get_response = requests.get(url)
+get_response = requests.get(get_url)
 print(get_response.status_code)
 assert get_response.status_code == 200
-print(f"Getting the book list of an {author}: ", get_response.text)
+g = get_response.json()
+print(f"Getting the book list of an {author}: ", g)
 
 #
 delete_url = getConfig()['API']['endpoint'] + apiResources.deleteBook
