@@ -32,3 +32,12 @@ def getDbConnection():
             return conn
     except Error as e:
         print(e)
+
+
+def getQuery(query):  # can also be placed in configs
+    c = getDbConnection()
+    cursor = c.cursor()
+    cursor.execute(query)
+    row = cursor.fetchone()
+    c.close()
+    return row

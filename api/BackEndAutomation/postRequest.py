@@ -7,10 +7,10 @@ import os
 
 url = getConfig()['API']['endpoint'] + apiResources.addBook
 headers = {"Content-Type": "application/json"}
-
-post_response = requests.post(url,
-                              json=addBookPayload("stabletest2"),
-                              headers=headers)
+# query = buildPayloadFromDB("SELECT b.* from books b ORDER BY b.BookName desc;")
+query = "SELECT b.* from books b ORDER BY b.BookName desc;"
+# post_response = requests.post(url, json=query, headers=headers)
+post_response = requests.post(url, json=buildPayloadFromDB(query), headers=headers)
 print(post_response.status_code)
 # print(response.content) #bytes
 assert post_response.status_code == 200
@@ -21,6 +21,14 @@ r = post_response.json()
 print(r)
 bookId = r["ID"]
 # print(bookId)
+
+# Get book by author endpoint
+author = "Sasha pushka"
+get_url = getConfig()['API']['endpoint'] + apiResources.getBookByAuthorName + author
+get_response = requests.get(url)
+print(get_response.status_code)
+assert get_response.status_code == 200
+print(f"Getting the book list of an {author}: ", get_response.text)
 
 #
 delete_url = getConfig()['API']['endpoint'] + apiResources.deleteBook
@@ -41,16 +49,17 @@ session = requests.session()  # creates a session stream
 session.auth = auth = ("sashapush@tut.by", configs.getPassword())
 gurl = 'https://api.github.com/user'
 git_response = session.get(gurl)  # attribute verify=False will skip ssl sertificate /or use getPassword() instead opf
-print("Git got status code: ", git_response.status_code)
+print("\n Git got status code: ", git_response.status_code)
 
 # TODO more testing with httpbin.org
 url = 'https://httpbin.org/post'
 files = {'file': open('Library-API.docx', 'rb')}
 r = requests.post(url, files=files)
-print(r.text)
+#print(r.text) returns uploaded file from response
 
 # https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repositories-for-the-authenticated-user
 gurl2 = gurl + "/repos"
 gr = session.get(gurl2)  # will not work without auth - session was created
 # alternatively - gr = session.get(gurl2,auth=("sashapush@tut.by", configs.getPassword())) shitty way to do itL
 print(gr.status_code)
+#print(gr.text)
