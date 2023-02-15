@@ -4,6 +4,9 @@ from api.BackEndAutomation.utils.configs import getConfig
 from api.BackEndAutomation.utils.resources import apiResources
 
 
+# how to run Allure report
+# behave .\api\BackEndAutomation\features\ --no-capture -f allure_behave.formatter:AllureFormatter -o api\AllureReports
+
 def before_scenario(context, scenario):
     print("Run Before Each Scenario")
 
