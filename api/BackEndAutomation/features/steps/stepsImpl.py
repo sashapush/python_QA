@@ -7,11 +7,11 @@ from api.BackEndAutomation.utils.resources import apiResources
 
 
 @given("Book details which needs to be added to library")
-def step_implementation(
+def step_impl(
         context):  # context is global, context is object which can be assigned properties to be used across BDD,
     context.url = getConfig()['API']['endpoint'] + apiResources.addBook  # we're assigning a new property to this object
     context.headers = {"Content-Type": "application/json"}
-    context.payLoad = addBookPayload("zxczxcxzczxa")
+    context.payLoad = addBookPayload("zxczxcxzczxa", "443")
 
 
 @when('We execute  addBook POST method')
@@ -30,3 +30,12 @@ def step_impl(context):  # context is object which can be assigned properties to
     context.bookId = r["ID"]
     print(context.bookId)
     assert r["Msg"] == "successfully added"
+
+
+@given("Book details with {isbn} and {aisle} to be added to library")
+def step_impl(
+        context, isbn,
+        aisle):  # context is global, context is object which can be assigned properties to be used across BDD,
+    context.url = getConfig()['API']['endpoint'] + apiResources.addBook  # we're assigning a new property to this object
+    context.headers = {"Content-Type": "application/json"}
+    context.payLoad = addBookPayload(isbn, aisle)

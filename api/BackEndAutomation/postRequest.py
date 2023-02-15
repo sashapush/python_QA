@@ -48,7 +48,7 @@ assert d["msg"] == "book is successfully deleted"
 session = requests.session()  # creates a session stream
 session.auth = auth = ("sashapush@tut.by", configs.getPassword())
 gurl = 'https://api.github.com/user'
-git_response = session.get(gurl)  # attribute verify=False will skip ssl sertificate /or use getPassword() instead opf
+git_response = session.get(gurl)  # attribute verify=False will skip ssl certificate /or use getPassword() instead opf
 print("\nGit got status code: ", git_response.status_code)
 
 # TODO more testing with httpbin.org

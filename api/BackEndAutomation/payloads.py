@@ -1,11 +1,11 @@
 from api.BackEndAutomation.utils.configs import getQuery
 
 
-def addBookPayload(isbn):
+def addBookPayload(isbn, aisle):
     body = {
         "name": "testing",
         "isbn": isbn,
-        "aisle": "13412",
+        "aisle": aisle,
         "author": "Apushka"
     }
     return body
