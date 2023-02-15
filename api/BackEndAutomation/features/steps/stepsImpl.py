@@ -11,7 +11,7 @@ def step_implementation(
         context):  # context is global, context is object which can be assigned properties to be used across BDD,
     context.url = getConfig()['API']['endpoint'] + apiResources.addBook  # we're assigning a new property to this object
     context.headers = {"Content-Type": "application/json"}
-    context.payLoad = addBookPayload("asdadsa")
+    context.payLoad = addBookPayload("zxczxcxzczxa")
 
 
 @when('We execute  addBook POST method')
@@ -27,6 +27,6 @@ def step_impl(context):  # context is object which can be assigned properties to
 def step_impl(context):  # context is object which can be assigned properties to be used across BDD
     r = context.post_response.json()
     print(r)
-    bookId = r["ID"]
-    print(bookId)
+    context.bookId = r["ID"]
+    print(context.bookId)
     assert r["Msg"] == "successfully added"
