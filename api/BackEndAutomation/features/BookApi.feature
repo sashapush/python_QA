@@ -4,6 +4,7 @@ Feature: Verify if Books are added and deleted using Library API
     Given Book details which needs to be added to library
     When We execute  addBook POST method
     Then Book is successfully added
+    And Status code of response is 200
 
   @regression
   Scenario Outline: Verify addBook API functionality #used for parametrization
@@ -12,5 +13,5 @@ Feature: Verify if Books are added and deleted using Library API
     Then Book is successfully added
     Examples:
       | isbn  | aisle |
-      | booba | 23221 |
-      | zopa  | 12321 |
+      | booba | 03221 |
+      | zopa  | 02321 |
