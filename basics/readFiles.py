@@ -1,8 +1,8 @@
 #read/write files
 #READ
-#with open("test.txt", 'r') as file:
-#    print(file.read())
-#    file.close()
+with open("test.txt", 'r') as file:
+    print(file.read())
+    file.close()
 #print("")
 # OR
 file = open("test.txt")
