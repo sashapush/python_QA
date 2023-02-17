@@ -19,3 +19,10 @@ with open("utils\\loan_data_bdd.csv", "r") as csvFile:
 # print(status)
 ind = names.index("Vasya")
 print(f"{names[ind]} have applied for {amounts[ind]} PLN and got a '{status[ind]}' decision")
+
+with open("utils\\loan_data_bdd.csv", "a",
+          newline='') as file:  # write mode, appending(not erasing previous content) #newline = '' prevents adding new lines
+    writer = csv.writer(file)
+    writer.writerow(["Boobs", "100", "Auto-approved"])
+    writer.writerow(["Vagiga", "1000", "Auto-approved"])
+    writer.writerow(["Ass", "1001", "Auto-approved"])
