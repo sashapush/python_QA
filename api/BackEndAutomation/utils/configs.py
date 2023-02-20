@@ -41,3 +41,8 @@ def getQuery(query):  # can also be placed in configs
     row = cursor.fetchone()
     c.close()
     return row
+
+def sendFileSSH(remotePath, localPath, sftp):
+    remotePath = remotePath
+    localPath = localPath
+    return sftp.put(localPath, remotePath)
