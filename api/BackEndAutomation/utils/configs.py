@@ -2,6 +2,7 @@ import configparser
 import os
 
 import mysql.connector
+import paramiko as par
 from mysql.connector import Error
 
 
@@ -42,7 +43,23 @@ def getQuery(query):  # can also be placed in configs
     c.close()
     return row
 
+
 def sendFileSSH(remotePath, localPath, sftp):
     remotePath = remotePath
     localPath = localPath
     return sftp.put(localPath, remotePath)
+
+
+def getSSHConnection():
+    host = getConfig()['SSH']['host']
+    port = getConfig()['SSH']['port']
+    user = getConfig()['SSH']['user']
+    password = getConfig()['SSH']['password']
+    try:
+        ssh = par.SSHClient()  # creates a stream of connection
+        ssh.set_missing_host_key_policy(par.AutoAddPolicy)  # supress checking of ssh key
+        ssh.connect(host, port, user, password)
+        ssh.exec_command('ls', timeout=5)
+        return ssh
+    except Exception as e:
+        print("Connection lost : %s" % e)

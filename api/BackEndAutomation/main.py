@@ -45,3 +45,6 @@ print(True * 2)
 numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 odd_numbers = [item for item in numbers if item % 2 == 1]
 print(odd_numbers)
+
+max_num = float("-inf")
+print(max_num)
