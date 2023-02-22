@@ -6,7 +6,6 @@ from api.BackEndAutomation.utils.configs import getConfig
 from api.BackEndAutomation.utils.configs import getSSHConnection
 
 # Start connection
-
 ssh = getSSHConnection()
 print("Connection was started successfully")
 # Run commands

@@ -14,5 +14,5 @@ class ChildImpl(Calculator):
         return self.num2 + self.num + self.Summation()
 
 
-obj = ChildImpl(2, 6)
+obj = ChildImpl()
 print(obj.getCompleteData())
