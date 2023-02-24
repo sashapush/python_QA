@@ -7,19 +7,23 @@ headers = {
 data = requests.get(url, headers=headers)
 # print(data.text)
 soup = BeautifulSoup(data.content, "html.parser")
-# print(soup.prettify())
 titles = []
-# ass = soup.findAll(class_="ipc-metadata-list-summary-item__li ipc-metadata-list-summary-item__li--link")
-# ass = soup.find(class_="ipc-metadata-list-summary-item__li ipc-metadata-list-summary-item__li--link").getText()
-# will append all shows
-# for a in ass:
-#    titles.append(a.getText())
-test = soup.find_all("a", href=True)
+test = soup.find_all("a", href=True)  # we look for all a tags with href attribute
 ass = []
-with open("file.txt", "w") as file:
+with open("emails.txt", "w", encoding="utf-8") as file:
     for t in test:
         # print(type(t)) # <class 'bs4.element.Tag'>
         # if "\b.co\b" in t:
-        if ".co" in t["href"]:
+        if "mailto:" in t["href"]:
             print(t["href"])
             file.write(t["href"].strip() + "\n")
+file.close()
+
+with open("websites.txt", "w", encoding="utf-8") as file:
+    for t in test:
+        # print(type(t)) # <class 'bs4.element.Tag'>
+        # if "\b.co\b" in t:
+        if "https://" in t["href"]:  # if any(s in line for s in ('string1', 'string2', ...)):
+            print(t["href"])
+            file.write(t["href"].strip() + "\n")
+file.close()
