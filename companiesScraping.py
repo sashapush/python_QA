@@ -18,11 +18,9 @@ with open("emails.txt", "w", encoding="utf-8") as file:
             print(t["href"])
             file.write(t["href"].strip() + "\n")
 file.close()
-
 with open("websites.txt", "w", encoding="utf-8") as file:
     for t in test:
         # print(type(t)) # <class 'bs4.element.Tag'>
-        # if "\b.co\b" in t:
         if "https://" in t["href"]:  # if any(s in line for s in ('string1', 'string2', ...)):
             print(t["href"])
             file.write(t["href"].strip() + "\n")
