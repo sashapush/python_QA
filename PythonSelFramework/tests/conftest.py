@@ -32,7 +32,7 @@ def setup(request):
     elif browser_name == "firefox":
         driver = webdriver.Firefox()
     elif browser_name == "edge":
-        service_object = Service("d:\\tools\\msedgedriver.exe")
+        service_object = Service("c:\\Users\\Alex\\PycharmProjects\\autopython_scrape\\msedgedriver.exe")
         driver = webdriver.Edge(service=service_object)  # expected Service object from params.
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.implicitly_wait(2)
