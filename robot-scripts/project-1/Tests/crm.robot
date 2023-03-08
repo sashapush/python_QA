@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation    This is my first attempt to robot robot, this is a suite.
-Library          SeleniumLibrary    timeout = 0:00:15
+Library          SeleniumLibrary    #timeout = 0:00:15
+#cd .\robot-scripts\project-1
+#robot -d results  .\Tests\crm.robot
 
 #timeout is set globally this way. Can be done more precisely
 
@@ -9,11 +11,18 @@ Library          SeleniumLibrary    timeout = 0:00:15
 
 *** Test Cases ***
 Should be able to add new customer
-    [Documentation]    Infromtatiopn abpiut this specific test
-    [Tags]             1006   Contacts    Smoke
-    Log                Starting the test case (info message)
-    OPEN BROWSER       https://automationplayground.com/crm/     chrome
-    sleep              5
+    [Documentation]         Information about this specific test
+    #tags will allow us to run specific tests
+    [Tags]                  1006   Contacts    Smoke
+    #Comment to selenium initialisation
+    Set Selenium Speed         .2
+    Set Selenium Timeout    5
+
+    log                     Starting the test case (info message)
+    #open browser in maximized
+    open browser            https://automationplayground.com/crm/     ff
+    maximize browser window
+    sleep                   5
     close browser
 
 
