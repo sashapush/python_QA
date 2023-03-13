@@ -19,7 +19,7 @@ Should be able to add new customer
 
     log                     Starting the test case (info message)
     #open browser in maximized
-    open browser            https://automationplayground.com/crm/     chrome
+    open browser            https://automationplayground.com/crm/     edge
     maximize browser window
     #wait is more usable due to the flexibility
     wait until page contains    Customers Are Priority One!
