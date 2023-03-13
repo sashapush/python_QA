@@ -3,6 +3,8 @@ Documentation    This is my first attempt to robot robot, this is a suite.
 Library          SeleniumLibrary    #timeout = 0:00:15
 #cd .\robot-scripts\project-1
 #robot -d results  .\Tests\crm.robot
+#robot -d results -i 1006 .\Tests\crm.robot
+#-i runs tagged cases
 *** Variables ***
 
 

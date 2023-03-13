@@ -19,6 +19,10 @@ list_two = [20, 25, 30, 40, 50, 60]
 common_list = set(list_one).intersection(list_two)
 print(common_list)
 
+a = [1, 2, 3]
+for i, v in enumerate(a):
+    print(i, v)
+
 # print(type(2, ))
 #
 # print(1 == (1))  # True
