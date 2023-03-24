@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 
 # tell pytest that there are going to be new command-line arguments and we need to parse them see
 # https://docs.pytest.org/en/latest/example/simple.html
-
+# pytest -v -s --browser_name firefox from CMD
 
 driver = None
 
