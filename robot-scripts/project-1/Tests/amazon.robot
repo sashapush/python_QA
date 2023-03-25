@@ -5,6 +5,7 @@
 Documentation   This is some basic info about the whole suite
 Resource        ../Resources/AmazonApp.robot
 Resource        ../Resources/Common.robot
+
 Suite Setup    Common.Generate test data
 Test Setup    Common.Begin web test
 Test Teardown  Common.End web test
