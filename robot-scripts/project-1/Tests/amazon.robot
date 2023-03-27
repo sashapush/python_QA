@@ -1,6 +1,8 @@
 #cd .\robot-scripts\project-1\
 #robot -d results -i smoke2  .\Tests\amazon.robot runs only specific test in file(this time by tag)
 #robot -d results .\Tests\amazon.robot
+#Example of variables being used from Command line
+#robot -v BROWSER:Chrome -d results .\Tests\amazon.robot
 *** Settings ***
 Documentation   This is some basic info about the whole suite
 Resource        ../Resources/AmazonApp.robot
