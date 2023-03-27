@@ -13,8 +13,9 @@ Suite Teardown    Common.Remove test data
 #Suite Setup - run before all testcases
 #Suite teardown - run after all testcases
 *** Variables ***
-
-
+${BROWSER} =    edge
+${START_URL} =    https://amazon.com
+${SEARCH_TERM} =  Ferrari 458
 *** Test Cases ***
 User can search for products
     [Documentation]  This is some basic info about the test

@@ -5,9 +5,9 @@ Resource        ../Resources/PO/LandingPage.robot
 Search for products
     LandingPage.Load
     LandingPage.Verify Page Loaded
-    Input Text                              id=twotabsearchtextbox      Ferrari 458
+    Input Text                              id=twotabsearchtextbox      ${SEARCH_TERM}
     Click Button                            xpath=//*[@id="nav-search-submit-button"]
-    Wait Until Page Contains                results for "Ferrari 458"
+    Wait Until Page Contains                results for "${SEARCH_TERM}"
 Select product from search results
     Wait Until Element Is Visible           xpath=//span[normalize-space()='Bburago B18-26017 1:24 Scale Race and Play of The Ferrari 458 Spider Sports Car Die-Cast Model']
     Click Link                              css=div[class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_1'] a[class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']

@@ -5,7 +5,7 @@ Library  SeleniumLibrary
 
 *** Keywords ***
 Load
-    Go to    http://www.amazon.com
+    Go to    ${START_URL}
 
 Verify page loaded
     Wait Until Page Contains                Search Amazon

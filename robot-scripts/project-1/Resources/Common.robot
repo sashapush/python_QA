@@ -1,9 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
+*** Variables ***
+
+
 *** Keywords ***
 
 Begin web test
-    Open Browser                            about:blank       chrome
+    Open Browser                            about:blank       ${BROWSER}
     Maximize Browser Window
 
 End web test
