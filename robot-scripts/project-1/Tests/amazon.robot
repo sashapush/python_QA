@@ -19,27 +19,27 @@ ${BROWSER} =    edge
 ${START_URL} =    https://amazon.com
 ${SEARCH_TERM} =  Ferrari 458
 *** Test Cases ***
-User can search for products
+Logged out user should be able to search for products
     [Documentation]  This is some basic info about the test
     [Tags]  Smoke
     AmazonApp.Search for products
 
-User can view a product
+Logged out user should be able to view a product
     [Documentation]  This is some basic info about the test
     [Tags]  Smoke
     AmazonApp.Search for products
     AmazonApp.Select product from search results
 
-User can add product to cart
+Logged out user should be able to add product to cart
     [Documentation]  This is some basic info about the test
     [Tags]  Smoke
     AmazonApp.Search for products
     AmazonApp.Select product from search results
     AmazonApp.Add product to cart
 
-User must sign in to check out
+Logged out user should be asked to sign in to check out
     [Documentation]  This is some basic info about the test
-    [Tags]  Smoke
+    [Tags]  Smoke2
     AmazonApp.Search for products
     AmazonApp.Select product from search results
     AmazonApp.Add product to cart
