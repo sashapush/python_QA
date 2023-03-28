@@ -20,4 +20,4 @@ Remove test data
     Log     I'm removing test data
 
 I'm another keyword
-    Log     Inside the keword
+    Log     Inside the keyword
