@@ -5,6 +5,9 @@ Resource        ../Resources/PO/Cart.robot
 Resource        ../Resources/PO/SignIn.robot
 Resource        ../Resources/PO/TopNav.robot
 *** Keywords ***
+Login
+    [Arguments]     ${Username}    ${Password}
+    SignIn.Login With Valid Credentials    ${Username}    ${Password}
 Search for products
     LandingPage.Load
     LandingPage.Verify Page Loaded

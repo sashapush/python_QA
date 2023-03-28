@@ -37,9 +37,9 @@ Should be able to add new customer
 
 
     input text              id=EmailAddress     ass@test.com
-    input text              id=FirstName        Ass
+    input text              id=FirstName        Assassino
     input text              id=LastName         Zopa
-    input text              id=City             Ass-city
+    input text              id=City             Assass-city
     select from list by value    id=StateOrRegion     AZ
     select radio button    gender      female
     select checkbox    promos-name

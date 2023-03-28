@@ -18,7 +18,22 @@ Suite Teardown    Common.Remove test data
 ${BROWSER} =    edge
 ${START_URL} =    https://amazon.com
 ${SEARCH_TERM} =  Ferrari 458
+${LOGIN_EMAIL} =    1234@test.com
+${LOGIN_PASSWORD} =    testpassword
+
 *** Test Cases ***
+Should be able to login
+    [Documentation]  New test
+    [Tags]  Sand
+    AmazonApp.Login     ${LOGIN_EMAIL}     ${LOGIN_PASSWORD}
+
+Should not be able to login with invalid credentials
+    [Documentation]  New test
+    [Tags]  Sand
+    SignIn.Fill "Email" Field      test@teet
+    SignIn.Fill "Password" Field    1231232
+    SignIn.Click "Submit" Button
+
 Logged out user should be able to search for products
     [Documentation]  This is some basic info about the test
     [Tags]  Smoke
